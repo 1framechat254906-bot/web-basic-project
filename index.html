@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>My Website</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* header */
+header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* nav */
+nav {
+    background: gray;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* section */
+section {
+    padding: 20px;
+}
+
+/* รูป */
+img {
+    width: 300px;
+}
+
+/* ตาราง */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+/* footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* DARK MODE */
+.dark {
+    background-color: black;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>เว็บไซต์ของฉัน</h1>
+</header>
+
+<nav>
+<a href="#about">เกี่ยวกับ</a>
+<a href="#table">ตาราง</a>
+</nav>
+
+<!-- ปุ่มเปลี่ยนธีม -->
+<section>
+<button onclick="toggleTheme()">🌙 เปลี่ยนโหมดสี</button>
+</section>
+
+<section id="about">
+<h2>เกี่ยวกับฉัน</h2>
+<p>นี่คือเว็บที่ฉันสร้างเอง</p>
+<img src="https://picsum.photos/300">
+</section>
+
+<section id="table">
+<h2>ตารางข้อมูล</h2>
+<table>
+<tr>
+<th>ชื่อ</th>
+<th>อายุ</th>
+</tr>
+<tr>
+<td>ไอซ์</td>
+<td>20</td>
+</tr>
+<tr>
+<td>โจ้</td>
+<td>21</td>
+</tr>
+<tr>
+<td>เฟรม</td>
+<td>22</td>
+</tr>
+</table>
+</section>
+
+<!-- เครื่องคิดเลข -->
+<section>
+<h2>เครื่องคำนวณ</h2>
+
+<input type="number" id="num1" placeholder="ตัวเลขที่ 1">
+<input type="number" id="num2" placeholder="ตัวเลขที่ 2">
+
+<br><br>
+
+<button onclick="calculate()">คำนวณผลรวม</button>
+
+<p id="result">ผลลัพธ์: </p>
+</section>
+
+<footer>
+<p>ผู้จัดทำ: นาย ฉัตรดนัย วงค์คำจันทร์</p>
+</footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+
+function calculate() {
+    let n1 = document.getElementById("num1").value;
+    let n2 = document.getElementById("num2").value;
+
+    let sum = Number(n1) + Number(n2);
+
+    document.getElementById("result").innerText = "ผลรวม = " + sum;
+}
+</script>
+
+</body>
+</html>
